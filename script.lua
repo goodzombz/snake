@@ -6,7 +6,9 @@ local snake = {{10, 10}, {10, 9}, {10, 8}}
 local direction = {0, 1}
 local food = {5, 5}
 function sleep(n)
+  print(1)
   os.execute("sleep " .. tonumber(n))
+  print(2)
 end
 local function clear_screen()
     result.set_content("")
