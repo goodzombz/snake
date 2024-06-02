@@ -9,6 +9,16 @@ local function clear_screen()
     result.set_content("")
 end
 
+local clock = os.clock
+function sleep(n)
+    local t0 = clock()
+    while clock() - t0 <= n do end
+end
+
+function wait(seconds)
+    local start = os.time()
+    repeat until os.time() > start + seconds
+end
 local function print_board()
     clear_screen()
     for y = 0, height - 1 do
@@ -73,4 +83,5 @@ while true do
     print(2)
     print_board()
     update_snake()
+    sleep(0.5)
 end
