@@ -5,7 +5,9 @@ local height = 20
 local snake = {{10, 10}, {10, 9}, {10, 8}}
 local direction = {0, 1}
 local food = {5, 5}
-
+function sleep(n)
+  os.execute("sleep " .. tonumber(n))
+end
 local function clear_screen()
     result.set_content("")
 end
@@ -74,4 +76,5 @@ clear_screen()
 while true do
     print_board()
     update_snake()
+    sleep(1)
 end
