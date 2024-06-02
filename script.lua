@@ -36,13 +36,9 @@ end
 local function update_snake()
     local new_head = {snake[1][1] + direction[1], snake[1][2] + direction[2]}
     if new_head[1] < 0 or new_head[1] >= height or new_head[2] < 0 or new_head[2] >= width then
-        result.set_content("Game Over")
-        os.exit()
     end
     for _, segment in ipairs(snake) do
         if segment[1] == new_head[1] and segment[2] == new_head[2] then
-            result.set_content("game Over")
-            os.exit()
         end
     end
     table.insert(snake, 1, new_head)
