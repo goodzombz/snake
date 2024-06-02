@@ -78,5 +78,4 @@ clear_screen()
 while true do
     print_board()
     update_snake()
-    sleep(0.5)
 end
