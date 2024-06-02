@@ -70,7 +70,6 @@ local key_to_direction = {
 
 clear_screen()
 while true do
-    print(1)
     print_board()
     update_snake()
 end
