@@ -9,11 +9,7 @@ local food = {5, 5}
 local function clear_screen()
     result.set_content("")
 end
-local clock = os.clock
-function sleep(n)-- seconds
-    local t0 = clock()
-    while clock() - t0 <= n do end
-end
+
 local function print_board()
     clear_screen()
     for y = 0, height - 1 do
