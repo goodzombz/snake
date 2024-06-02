@@ -72,6 +72,5 @@ clear_screen()
 while true do
     print(1)
     print_board()
-    print(x)
     update_snake()
 end
