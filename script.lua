@@ -10,9 +10,7 @@ local function clear_screen()
 end
 print(1)
 local function sleep(n)
-    print(2)
     local t0 = os.clock()
-    print(3)
     while os.clock() - t0 <= n do end
 end
 
@@ -84,5 +82,5 @@ while true do
     print(2)
     print_board()
     update_snake()
-    sleep(0.5)
+    sleep(1)
 end
