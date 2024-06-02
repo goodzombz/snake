@@ -8,14 +8,12 @@ local food = {5, 5}
 local function clear_screen()
     result.set_content("")
 end
-print(0)
-local clock = os.clock
 print(1)
 local function sleep(n)
     print(2)
-    local t0 = clock()
+    local t0 = os.clock()
     print(3)
-    while clock() - t0 <= n do end
+    while os.clock() - t0 <= n do end
 end
 
 function wait(seconds)
