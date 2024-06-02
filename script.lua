@@ -11,7 +11,7 @@ end
 print(0)
 local clock = os.clock
 print(1)
-function sleep(n)
+local function sleep(n)
     print(2)
     local t0 = clock()
     print(3)
