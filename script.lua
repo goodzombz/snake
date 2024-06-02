@@ -42,7 +42,6 @@ local function update_snake()
     for _, segment in ipairs(snake) do
         if segment[1] == new_head[1] and segment[2] == new_head[2] then
             result.set_content("game Over")
-            os.exit()
         end
     end
     table.insert(snake, 1, new_head)
