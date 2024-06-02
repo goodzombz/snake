@@ -8,7 +8,7 @@ local food = {5, 5}
 local function clear_screen()
     result.set_content("")
 end
-
+print(0)
 local clock = os.clock
 print(1)
 function sleep(n)
