@@ -10,8 +10,11 @@ local function clear_screen()
 end
 print(1)
 local function sleep(n)
+    print(3)
     local t0 = os.clock()
+    print(4)
     while os.clock() - t0 <= n do end
+    print(5)
 end
 
 function wait(seconds)
