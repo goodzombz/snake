@@ -7,7 +7,7 @@ local direction = {0, 1}
 local food = {5, 5}
 
 local function clear_screen()
-    result.set("")
+    result.set_content("")
 end
 
 local function print_board()
