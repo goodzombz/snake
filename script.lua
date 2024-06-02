@@ -5,7 +5,6 @@ local height = 20
 local snake = {{10, 10}, {10, 9}, {10, 8}}
 local direction = {0, 1}
 local food = {5, 5}
-end
 local function clear_screen()
     result.set_content("")
 end
@@ -70,9 +69,8 @@ local key_to_direction = {
 }
 
 clear_screen()
-x = 1
 while true do
-    x = x+1
+    print(1)
     print_board()
     print(x)
     update_snake()
