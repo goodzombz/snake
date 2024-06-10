@@ -86,16 +86,16 @@ end
 
 get("input-key").on_input(function(content)
     local key = content:sub(-1, -1):lower()
-    if key == 'w' then
+    if key == 'w' and direction != {1,0} and direction != {-1,0} then
         direction = {-1,0}
     end
-    if key == 's' then
+    if key == 's' and direction != {1,0} and direction != {-1,0} then
         direction = {1,0}
     end
-    if key =='a' then
+    if key =='a' and direction != {0,-1} and direction != {0,1} then
         direction = {0,-1}
     end
-    if key == 'd' then
+    if key == 'd' and direction != {0,-1} and direction != {0,1} then
         direction = {0,1}
     end
 
