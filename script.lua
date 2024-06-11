@@ -36,7 +36,7 @@ local function print_board()
                 result.set_content(result.get_content() .. " ")
             end
         end
-        result.set_content(result.get_content() .. "\n")
+        result.set_content(result.get_content() .."\n")
     end
 end
 
@@ -48,7 +48,7 @@ local function update_snake()
     end
     for _, segment in ipairs(snake) do
         if segment[1] == new_head[1] and segment[2] == new_head[2] then
-            result.set_content(result.get_content() .. "Game Over!\n")
+            result.set_content(result.get_content() .. "Game Over!!\n")
             os.exit()
         end
     end
@@ -60,11 +60,20 @@ local function update_snake()
     end
 end
 
-local function change_direction(new_direction)
-    if new_direction[1] == -direction[1] and new_direction[2] == -direction[2] then
-        return
+local function change_direction(key)
+    if key == 'w' and direction[1] ~= 1 and direction[1] ~= -1 then
+        direction = {-1,0}
+    
+    elseif key == 's' and direction[1] ~= 1 and direction[1] ~= -1 then
+        direction = {1,0}
+    
+    elseif key =='a' and direction[2] ~= -1 and direction[2] ~= 1 then
+        direction = {0,-1}
+    
+    elseif key =='d' and direction[2] ~= -1 and direction[2] ~= 1 then
+        direction = {0,1}
     end
-    direction = new_direction
+
 end
 
 
@@ -79,27 +88,16 @@ local key_to_direction = {
 clear_screen()
 
 function snake1()
+    print(direction)
     print_board()
     update_snake()
-    set_timeout(snake1, 200)
+    set_timeout(snake1, 5)
 end
 
 get("input-key").on_input(function(content)
     local key = content:sub(-1, -1):lower()
-    if key == 'w' and direction != {1,0} and direction != {-1,0} then
-        direction = {-1,0}
-    end
-    if key == 's' and direction != {1,0} and direction != {-1,0} then
-        direction = {1,0}
-    end
-    if key =='a' and direction != {0,-1} and direction != {0,1} then
-        direction = {0,-1}
-    end
-    if key == 'd' and direction != {0,-1} and direction != {0,1} then
-        direction = {0,1}
-    end
-
-
+    change_direction(key)
+    direction = direction
 end)
 
 snake1()
